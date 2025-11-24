@@ -1,0 +1,325 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px;
+    min-height: 500px;
+    background: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Sections */
+.section {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.section h2 {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* URL Display */
+.url-display {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    word-break: break-all;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    font-family: monospace;
+}
+
+/* Result Cards */
+.result-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-top: 10px;
+}
+
+.result-card.hidden {
+    display: none;
+}
+
+/* Risk Level Badges */
+.risk-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.risk-safe {
+    background: #d4edda;
+    color: #155724;
+}
+
+.risk-low {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.risk-medium {
+    background: #ffe5cc;
+    color: #cc5500;
+}
+
+.risk-high {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Risk Score */
+.risk-score {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.score-safe { color: #28a745; }
+.score-low { color: #ffc107; }
+.score-medium { color: #fd7e14; }
+.score-high { color: #dc3545; }
+
+/* Flags List */
+.flags-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.flags-list li {
+    padding: 8px;
+    background: #f8f9fa;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-size: 13px;
+    border-left: 3px solid #ffc107;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.url-input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.url-input:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0052a3;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #545b62;
+}
+
+/* Statistics Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0066cc;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+}
+
+/* History List */
+.history-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.history-item {
+    background: white;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border-left: 4px solid #ddd;
+    font-size: 12px;
+}
+
+.history-item.safe { border-left-color: #28a745; }
+.history-item.low { border-left-color: #ffc107; }
+.history-item.medium { border-left-color: #fd7e14; }
+.history-item.high { border-left-color: #dc3545; }
+
+.history-url {
+    font-weight: 600;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.history-meta {
+    font-size: 11px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.loading::after {
+    content: '...';
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Footer */
+.footer {
+    padding: 15px;
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+    background: #f8f9fa;
+}
+
+/* Scrollbar Styling */
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* API Status Indicator */
+.api-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    margin-left: 8px;
+}
+
+.api-status.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.api-status.inactive {
+    background: #f8d7da;
+    color: #721c24;
+}

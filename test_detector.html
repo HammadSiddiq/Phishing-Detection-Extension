@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detector Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .url-group {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h3 {
+            color: #666;
+            margin-top: 0;
+        }
+        a {
+            display: block;
+            padding: 10px;
+            margin: 8px 0;
+            background: #e8f4f8;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #0066cc;
+            transition: all 0.3s;
+        }
+        a:hover {
+            background: #d0e8f2;
+            transform: translateX(5px);
+        }
+        .safe { border-left: 4px solid #28a745; }
+        .suspicious { border-left: 4px solid #ffc107; }
+        .dangerous { border-left: 4px solid #dc3545; }
+        .note {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>🛡️ Phishing Detector Test Page</h1>
+    <p class="note">Hover over links to see real-time detection. These are example URLs for testing purposes.</p>
+
+    <div class="url-group">
+        <h3>✅ Safe URLs (Should show LOW/SAFE risk)</h3>
+        <a href="https://www.google.com" class="safe">https://www.google.com</a>
+        <a href="https://www.github.com" class="safe">https://www.github.com</a>
+        <a href="https://www.wikipedia.org" class="safe">https://www.wikipedia.org</a>
+    </div>
+
+    <div class="url-group">
+        <h3>⚠️ Suspicious URLs (Should show MEDIUM risk)</h3>
+        <a href="http://paypal-secure-login.xyz" class="suspicious">http://paypal-secure-login.xyz (No HTTPS + Suspicious TLD)</a>
+        <a href="https://verify-your-account-urgently.com" class="suspicious">https://verify-your-account-urgently.com (Phishing keywords)</a>
+        <a href="https://subdomain1.subdomain2.subdomain3.example.com" class="suspicious">https://subdomain1.subdomain2.subdomain3.example.com (Excessive subdomains)</a>
+    </div>
+
+    <div class="url-group">
+        <h3>🚨 Dangerous URLs (Should show HIGH risk)</h3>
+        <a href="http://192.168.1.1/login" class="dangerous">http://192.168.1.1/login (IP address + No HTTPS)</a>
+        <a href="http://g00gle-login.tk/verify" class="dangerous">http://g00gle-login.tk/verify (Typosquatting + Suspicious TLD + Keywords)</a>
+        <a href="https://paypa1-secure@malicious-site.com" class="dangerous">https://paypa1-secure@malicious-site.com (@ symbol + Typosquatting)</a>
+        <a href="http://account-verify-suspended-urgent-login-now.com" class="dangerous">http://account-verify-suspended-urgent-login-now.com (Multiple phishing keywords)</a>
+    </div>
+
+    <div class="url-group">
+        <h3>🔍 Edge Cases</h3>
+        <a href="https://example.com:8080/path" class="suspicious">https://example.com:8080/path (Non-standard port)</a>
+        <a href="http://this-is-a-very-long-url-that-might-be-suspicious-because-phishing-urls-are-often-extremely-long.com/with/multiple/paths/to/make/it/even/longer" class="suspicious">Long URL (Test length detection)</a>
+        <a href="https://face-book.com" class="suspicious">https://face-book.com (Similar to facebook)</a>
+    </div>
+
+    <script>
+        console.log('Test page loaded. Your extension should analyze these URLs.');
+        console.log('Open the extension popup to see detailed analysis of the current page URL.');
+    </script>
+</body>
+</html>
