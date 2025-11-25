@@ -17,19 +17,18 @@
 ## 🧠 How It Works
 #### 1. The background script retrieves the active tab’s URL.
 #### 2. A set of predefined phishing-risk rules evaluate the URL:
-##### a. Unusually long URLs
-##### b. Suspicious domain patterns
-##### c. Known malicious or uncommon TLDs
+#####   a. Unusually long URLs
+#####   b. Suspicious domain patterns
+#####   c. Known malicious or uncommon TLDs
 #### 3. Excessive numbers, symbols, or deceptive formatting
 
 #### The result is displayed immediately in the popup window.
 
 ## 🛠️ Tech Stack
-
-### 📌 JavaScript (Vanilla) – core logic
-### 📌 HTML/CSS – popup interface
-### 📌 Chrome Extensions API (Manifest V3)
-### 📌 Service Workers
+#### 📌 JavaScript (Vanilla) – core logic
+#### 📌 HTML/CSS – popup interface
+#### 📌 Chrome Extensions API (Manifest V3)
+#### 📌 Service Workers
 
 ## 🔧 Installation (Local Development)
 #### 1. Download or clone the repository
